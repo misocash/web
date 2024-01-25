@@ -169,9 +169,7 @@ export const getStaked = async (masterChefContract, pid, account) => {
     const { amount } = await masterChefContract.methods
       .userInfo(pid, account)
       .call()
-    console.log('amount', await masterChefContract.methods
-    .userInfo(pid, account)
-    .call());
+    console.log('amount', amount);
     return new BigNumber(amount)
   } catch {
     return new BigNumber(0)

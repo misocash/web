@@ -55,8 +55,11 @@ const Home: React.FC = () => {
       >
         <Button text="See the Menu" to="/farms" variant="secondary"><MenuImg src={btnImgMenu} alt="" /></Button>
 
-        <Button text="mint" onClick={onMint}></Button>
-        <Button text="add" onClick={onAdd}></Button>
+        <div style={{ border:"1px solid red", padding: '10px', marginTop: 20}}>
+          <div style={{fontWeight: 700, marginBottom: 6}}>Test button</div>
+          <Button text="mint" onClick={onMint}></Button>
+          <Button text="add" onClick={onAdd}></Button>
+        </div>
       </div>
     </Page>
   )

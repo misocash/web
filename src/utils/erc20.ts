@@ -38,6 +38,7 @@ export const getBalance = async (
     const balance: string = await lpContract.methods
       .balanceOf(userAddress)
       .call()
+    console.log('balance', balance);
     return balance
   } catch (e) {
     return '0'

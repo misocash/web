@@ -8,6 +8,8 @@ export interface SushiContext {
   sushi?: typeof Sushi
 }
 
+const currentChainId = 1102
+
 export const Context = createContext<SushiContext>({
   sushi: undefined,
 })
@@ -29,7 +31,10 @@ const SushiProvider: React.FC = ({ children }) => {
   useEffect(() => {
     if (ethereum) {
       const chainId = Number(ethereum.chainId)
-      const sushiLib = new Sushi(ethereum, 1102, false, {
+
+      console.log('chainId', chainId);
+      
+      const sushiLib = new Sushi(ethereum, chainId, false, {
         defaultAccount: ethereum.selectedAddress,
         defaultConfirmations: 1,
         autoGasMultiplier: 1.5,

@@ -13,15 +13,36 @@ import ModalTitle from '../ModalTitle'
 import Spacer from '../Spacer'
 
 import WalletCard from './components/WalletCard'
+import useAddEthChain from '../../hooks/useAddEthChain'
 
 const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
-  const { account, connect } = useWallet()
+  const { account, connect, chainId, ethereum } = useWallet()
+  const { addEthChain } = useAddEthChain()
+  const wallet = useWallet()
+  console.log(wallet);
+  
   
   useEffect(() => {
     if (account) {
       onDismiss()
     }
   }, [account, onDismiss])
+
+
+  const onConnect = async () => {
+
+    if (typeof window.ethereum === 'undefined') {
+      // 提示用户安装 MetaMask 插件
+      alert('Please install the MetaMask extension to use this feature.');
+      return
+    }
+    
+    // 请求切换到指定网络
+    await addEthChain()
+    
+    await connect('injected')
+  }
+
 
   return (
     <Modal>
@@ -32,7 +53,7 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
           <StyledWalletCard>
             <WalletCard
               icon={<img src={metamaskLogo} style={{ height: 32 }} alt="" />}
-              onConnect={() => connect('injected')}
+              onConnect={onConnect}
               title="Metamask"
             />
           </StyledWalletCard>
