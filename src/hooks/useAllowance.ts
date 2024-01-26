@@ -21,7 +21,6 @@ const useAllowance = (lpContract: Contract) => {
       masterChefContract,
       account,
     )
-    console.log('allowance', allowance);
     setAllowance(new BigNumber(allowance))
   }, [account, masterChefContract, lpContract])
 

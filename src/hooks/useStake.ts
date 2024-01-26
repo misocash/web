@@ -17,7 +17,6 @@ const useStake = (pid: number) => {
         amount,
         account,
       )
-      console.log(txHash)
     },
     [account, pid, sushi],
   )

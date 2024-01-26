@@ -19,8 +19,6 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, connect, chainId, ethereum } = useWallet()
   const { addEthChain } = useAddEthChain()
   const wallet = useWallet()
-  console.log(wallet);
-  
   
   useEffect(() => {
     if (account) {
