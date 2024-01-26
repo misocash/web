@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   const onMint = async () => {
     if (sushi) {
       const wethContracts = getWethContract(sushi)
-      await wethContracts.methods.deposit().send({from: wallet.account, value: 10000000000000000})
+      await wethContracts.methods.deposit().send({from: wallet.account, value: 100000000000000000})
     }
   }
 

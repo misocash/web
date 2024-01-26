@@ -324,4 +324,17 @@ export const supportedPools = [
     tokenSymbol: 'wBTC',
     icon: WBTCCoinIcon,
   },
+  {
+    pid: 1,
+    lpAddresses: {
+      1102: '0xc999AD6C0F1103191B9e5ADE12b647536A540d7E',
+    },
+    tokenAddresses: {
+      1102: '0xc999AD6C0F1103191B9e5ADE12b647536A540d7E',
+    },
+    name: 'Miso Party!',
+    symbol: 'USDT',
+    tokenSymbol: 'USDT',
+    icon: USDTCoinIcon,
+  },
 ]
