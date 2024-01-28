@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract SushiToken",
-        "name": "_sushi",
+        "internalType": "contract MisoToken",
+        "name": "_miso",
         "type": "address"
       },
       {
@@ -13,7 +13,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_sushiPerBlock",
+        "name": "_misoPerBlock",
         "type": "uint256"
       },
       {
@@ -289,6 +289,32 @@
   },
   {
     "inputs": [],
+    "name": "miso",
+    "outputs": [
+      {
+        "internalType": "contract MisoToken",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "misoPerBlock",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "owner",
     "outputs": [
       {
@@ -313,7 +339,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingSushi",
+    "name": "pendingMiso",
     "outputs": [
       {
         "internalType": "uint256",
@@ -351,7 +377,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accSushiPerShare",
+        "name": "accMisoPerShare",
         "type": "uint256"
       }
     ],
@@ -417,32 +443,6 @@
   {
     "inputs": [],
     "name": "startBlock",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "sushi",
-    "outputs": [
-      {
-        "internalType": "contract SushiToken",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "sushiPerBlock",
     "outputs": [
       {
         "internalType": "uint256",
