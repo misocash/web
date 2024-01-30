@@ -26,16 +26,14 @@ const FarmCards: React.FC = () => {
   const [farms] = useFarms()
   const { account } = useWallet()
   const stakedValue = useAllStakedValue()
-
   const sushiIndex = farms.findIndex(
     ({ tokenSymbol }) => tokenSymbol === 'MISO',
   )
-
   const sushiPrice =
     sushiIndex >= 0 && stakedValue[sushiIndex]
       ? stakedValue[sushiIndex].tokenPriceInWeth
       : new BigNumber(0)
-
+    
   const BLOCKS_PER_YEAR = new BigNumber(2336000)
   const SUSHI_PER_BLOCK = new BigNumber(1000)
 
@@ -52,6 +50,7 @@ const FarmCards: React.FC = () => {
               .div(stakedValue[i].totalWethValue)
           : null,
       }
+
       const newFarmRows = [...farmRows]
       if (newFarmRows[newFarmRows.length - 1].length === 3) {
         newFarmRows.push([farmWithStakedValue])
@@ -92,7 +91,6 @@ interface FarmCardProps {
 const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   const [startTime, setStartTime] = useState(0)
   const [harvestable, setHarvestable] = useState(0)
-
   const { account } = useWallet()
   const { lpTokenAddress } = farm
   const sushi = useSushi()
