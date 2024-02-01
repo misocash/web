@@ -6,14 +6,14 @@ const useAddEthChain = () => {
                 method: 'wallet_addEthereumChain',
                 params: [{
                     chainId: "0x44E",
-                    rpcUrls: ["https://trusted-sequencer-rpc.bsquared.network"],
+                    rpcUrls: ["https://haven-rpc.bsquared.network"],
                     chainName: "MISO TESTNET",
                     nativeCurrency: {
                         name: "BTC",
                         symbol: "BTC",
                         decimals: 18
                     },
-                    blockExplorerUrls: ["https://testnet-role.bsquared.network"]
+                    blockExplorerUrls: ["https://haven-explorer.bsquared.network"]
                 }]
             });
         }
